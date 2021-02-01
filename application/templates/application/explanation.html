@@ -1,0 +1,41 @@
+{% extends "application/base.html" %}
+{% block content %}
+	<h2>Como ocorre a validação de CPF's</h2>
+	<p>Por: Mateus Victor - 2021</p><br>
+
+	<p>O CPF (Cadastro de Pessoas Físicas) é composto, nessa ordem, por 8 dígitos aletórios, 1 dígito representando um grupo de possíveis estados de emissão e outros 2 dígitos verificadores, sendo esses últimos os dígitos que conferem a validez de um CPF.</p>
+	<p>Os dígitos verificadores pode ser calculados segundo um algoritmo matemático, seguindo os seguintes passos:</p>
+
+	<p>Vamos utilizar 091.372.183 como sendo os 9 primeiros dígitos do CPF.
+	<p><strong>1. Os 9 primeiros dígitos são multiplicados, cada um, por uma sequência decrescente partindo do 10 e, ao fim, soma-se os resultados das multiplicações. Exemplo:</strong></p>
+
+	<div class="mycode">
+	<code>10*0 + 9*9 + 8*1 + 7*3 + 6*7 + 5*2 + 4*1 + 3*8 + 2*3 = <strong>196</strong></code>
+	</div><br>
+
+	<p><strong>2. Mutiplica-se o resultado da soma anterior por 10. O primeiro dígito verificador será o resto da dívisão deste produto por 11. Ou seja, n*10 mod 11:</strong></p>
+
+	<div class="mycode">
+	<code>(196 * 10) % 11 = <strong>2 <br>(Caso o resultado for 10, considere 0)</strong></code>
+	</div><br>
+
+	<p>Dígito verificador 1: <strong>2</strong><br>
+	CPF até agora: <strong>091.372.183-2</strong></p>
+
+	<p><strong>3. Repete-se o passo 1, porém partindo do multiplicador 11 (já incluindo o primeiro dígito verificador no CPF):</strong></p>
+
+	<div class="mycode">
+	<code>11*0 + 10*9 + 9*1 + 8*3 + 7*7 + 6*2 + 5*1 + 4*8 + 3*3 + 2*<strong>2</strong> = <strong>234</strong></code>
+	</div><br>
+
+	<p><strong>4. Executa-se o mesmo procedimento do passo 2, utilizando a nova soma obtida:</strong></p>
+	<div class="mycode">
+	<code>(234 * 10) % 11 = <strong>8<br>(Caso o resultado for 10, considere 0)</strong></code>
+	</div><br>
+
+	<p style="display: inline;">Dígito verificador 2: <strong>8</strong><br>
+	<p style="display: inline;">CPF válidado: <strong><p style="display: inline;color: #15CA1A;">091.372.183-28</p></strong></p>
+	
+	<p>Deseja coferir se o algoritmo realmente funciona? Acesse nosso <a href="{% url 'validator' %}">validador de CPF's</a> e insira os nove primeiros dígitos do seu CPF + 2 dígitos aleatórios no final. Nosso validador irá informar os verdadeiros dígitos verificadores.</p>
+    
+{% endblock content %}

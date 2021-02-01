@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gerador de CPF's</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'application/main.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <script src="https://kit.fontawesome.com/1b49d7e787.js"></script>
+        <div class="container">
+            <div id="app-container">
+                <nav class="navbar navbar-expand-sm navbar-custom">
+                    <div class="container-fluid">
+                        <div class="nav navbar-nav">
+                            <a class="nav-link" href="{% url 'generator' %}">Gerar CPF</a>
+                            <a class="nav-link" href="{% url 'validator' %}">Validar CPF</a>
+                            <a class="nav-link" href="{% url 'explanation' %}">Como funciona</a>
+                        </div>
+                        <ul class="nav navbar-nav icons">
+                            <li><a href="https://github.com/mateusvictor" target="_blank"><i class="fab fa-github fa-lg"></i></a></li>
+                            <li><a href="https://linkedin.com/in/mateusvictor" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a></li>  
+                            <li><a href="https://instagram.com/mateus.vts" target="_blank"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="form-wrapper">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

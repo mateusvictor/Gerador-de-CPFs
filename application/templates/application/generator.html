@@ -1,0 +1,47 @@
+{% extends "application/base.html" %}
+{% block content %}
+	<h2>Gerar CPF válido</h2><br>
+	<form action="{% url 'generate_cpf' %}" method="POST">
+		{% csrf_token %}
+		<div class="mb-2">
+			<label class="mr-2"for="state">Especificar estado de emissão do CPF:</label>
+			<select id="state" name="state">
+				<option value="Indiferente">Indiferente</option>
+				<option value="AC">AC</option>
+				<option value="AL">AL</option>
+				<option value="AM">AM</option>
+				<option value="AP">AP</option>
+				<option value="BA">BA</option>
+				<option value="CE">CE</option>
+				<option value="DF">DF</option>
+				<option value="ES">ES</option>
+				<option value="GO">GO</option>
+				<option value="MA">MA</option>
+				<option value="MG">MG</option>
+				<option value="MS">MS</option>
+				<option value="MT">MT</option>
+				<option value="PA">PA</option>
+				<option value="PB">PB</option>
+				<option value="PE">PE</option>
+				<option value="PI">PI</option>
+				<option value="PR">PR</option>
+				<option value="RJ">RJ</option>
+				<option value="RN">RN</option>
+				<option value="RO">RO</option>
+				<option value="RR">RR</option>
+				<option value="RS">RS</option>
+				<option value="SC">SC</option>
+				<option value="SE">SE</option>
+				<option value="SP">SP</option>
+				<option value="TO">TO</option>
+			</select>
+		</div>
+		<div class="mb-4">
+			<label for="quantity">Quantidade de CPF's a gerar:</label>
+			<input class="ml-2" type="number" min="1" max="1000" name="quantity" required>
+		</div>
+
+		<input type="submit" name="submit" style="flex: 1"id="submit" class="btn" value="Gerar">
+	</form>
+		
+{% endblock content %}

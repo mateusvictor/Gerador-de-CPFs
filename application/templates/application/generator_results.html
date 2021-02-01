@@ -1,0 +1,14 @@
+{% extends "application/base.html" %}
+{% block content %}
+<a href="{% url 'generator' %}"><h5>Voltar</h5></a>	
+	<h2>Gerador de CPF's - Resultados</h2><br>
+	<h5>{{ quantity }} CPF's gerados</h5>
+	<h5>Estado: {{ state }}</h5><br>
+
+	{% for num_cpf, f_cpf in cpfs %}
+		<h5>{{ forloop.counter }})</h5>
+		<h5 align="center">{{ num_cpf }}<br>{{ f_cpf }}</h5>
+	{% endfor %}	
+
+	
+{% endblock content %}

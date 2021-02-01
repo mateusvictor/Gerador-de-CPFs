@@ -1,0 +1,20 @@
+{% extends "application/base.html" %}
+{% block content %}
+	
+	<a href="{% url 'validator' %}"><h5>Voltar</h5></a>	
+	<h2>Validador de CPF's - Resultados</h2><br>
+	<h5>CPF informado:</h5>
+	<h5 style="text-align: center;color:{% if valid %}#15CA1A{% else %}#f00{% endif %};">{{ num_cpf }}<br>{{ f_cpf }}</h5>
+
+	<h5 style="display: inline;">Válido: </h5>
+	<h5 style="display: inline;color:{% if valid %}#15CA1A{% else %}#f00{% endif %};">{% if valid %}SIM{% else %}NÃO{% endif %}</h5><br>
+
+	{% if all_equal %}
+		<h5 class="mt-2">CPF's com os nove primeiros dígitos iguais não são válidos.</h5>
+	{% else %}
+		<h5 class="mt-2">Estado: {{ state }}</h5>
+		<h5 style="display: inline">CPF validado: </h5>
+		<h5 style="display:inline;color: #15CA1A;">{{ new_cpf }}</h5><br>
+	{% endif %}
+		
+{% endblock content %}
