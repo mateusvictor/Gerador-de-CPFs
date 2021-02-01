@@ -6,7 +6,7 @@ Gerador e validador de CPF's feito em Python utilizando o framework Django.
 <img src="https://github.com/mateusvictor/gerador-de-cpfs/blob/main/screenshots/generator.png"></img>
 
 ### Validador
-<img src="https://github.com/mateusvictor/gerador-de-cpfs/blob/main/screenshots/validador.png"></img>
+<img src="https://github.com/mateusvictor/gerador-de-cpfs/blob/main/screenshots/validator.png"></img>
 
 ### Explicação
 <img src="https://github.com/mateusvictor/gerador-de-cpfs/blob/main/screenshots/explanation.png"></img>
