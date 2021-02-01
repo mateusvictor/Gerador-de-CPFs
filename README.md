@@ -2,9 +2,14 @@
 Gerador e validador de CPF's feito em Python utilizando o framework Django.
 
 ## Como usar
-´´´
-git clone git@github.com:mateusvictor/Gerador-de-CPFs.git
-´´´
+```
+pip install django
+```
+Na pasta do projeto:
+```
+python manage.py runserver
+```
+Acesse localhost:8000 ou 127.0.0.1:8000 no seu navegador e desfrute do projeto.
 
 
 ## Screenshots
