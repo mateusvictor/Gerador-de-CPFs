@@ -1,1 +1,1 @@
-web: gunicorn todo_app.wsgi --log-file - 
+web: gunicorn gerador_de_cpfs.wsgi --log-file - 
