@@ -27,8 +27,8 @@ SECRET_KEY = 'zywd11)u5v(zi7#%#98wv2za(hetyglyju@!#_d3o8x-km(=90'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['gerar-cpfs.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gerar-cpfs.herokuapp.com']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
