@@ -1,6 +1,6 @@
 # Gerador-de-CPFs
-Gerador e validador de CPF's feito em Python utilizando o framework Django.
-Link: <a href="https://gerar-cpfs.herokuapp.com/"></a>
+Gerador e validador de CPF's feito em Python utilizando o framework Django.<br>
+Link: <a href="https://gerar-cpfs.herokuapp.com/">https://gerar-cpfs.herokuapp.com/</a>
 
 ## Como usar (localmente)
 ```
